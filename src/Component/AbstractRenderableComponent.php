@@ -16,7 +16,7 @@ abstract class AbstractRenderableComponent implements RenderableComponentInterfa
         $this->templateEngine = $templateEngine;
     }
 
-    protected function renderTemplate($path, array $params = [])
+    protected function renderTemplate($path, array $params = []): string
     {
         return $this->templateEngine->render($path, $params);
     }

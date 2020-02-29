@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection SqlNoDataSourceInspection */
+
 declare(strict_types=1);
 
 namespace TripleBits\WpFramework\Repository;
@@ -18,6 +20,11 @@ abstract class AbstractRepository
     }
 
     abstract public function prefixedTableName(): string;
+
+    public function countAll(): int
+    {
+        return (int) $this->database->getVar(sprintf('SELECT COUNT(1) FROM `%s`', $this->prefixedTableName()));
+    }
 
     protected function generateSql(array $order = [], ?int $limit = null, ?int $offset = null, $select = '*'): string
     {

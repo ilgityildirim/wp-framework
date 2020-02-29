@@ -22,7 +22,7 @@ class TemplateEngine implements TemplateEngineInterface
     {
         $this->slug = $slug;
         $this->path = $directory->getPluginDirectory() . 'template' . DIRECTORY_SEPARATOR;
-        $this->url = $directory->getPluginDirectory() . 'public' . DIRECTORY_SEPARATOR;
+        $this->url = plugin_dir_url($directory->getPluginDirectory() . $slug . '.php');
     }
 
     /** @noinspection PhpUnused */

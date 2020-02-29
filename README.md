@@ -11,3 +11,5 @@ Do not remove nor change [COPYRIGHT.md](COPYRIGHT.md) and [LICENSE.md](LICENSE.m
 - [ ] Unit tests && TDD moving forward
 - [ ] Use Docker && .env for testing
 - [ ] `/** @noinspection PhpUnused */` to files instead of methods?
+- [ ] Additional Tools
+- [ ] Use Docker for composer and [tools](TOOLS.md)

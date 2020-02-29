@@ -11,13 +11,7 @@ trait AjaxTrait
         return defined('DOING_AJAX') && DOING_AJAX;
     }
 
-    /**
-     * @param string|null $action
-     * @param string|null $key
-     *
-     * @return bool
-     */
-    public function isSecureAjax($action = null, $key = null)
+    public function isSecureAjax(?string $action = null, ?string $key = null, bool $die = false): bool
     {
         $_action = $action;
         if (null === $_action) {
@@ -29,6 +23,6 @@ trait AjaxTrait
             $_key = false;
         }
 
-        return $this->isAjax() && (bool) check_ajax_referer($_action, $_key, false);
+        return $this->isAjax() && (bool) check_ajax_referer($_action, $_key, $die);
     }
 }
